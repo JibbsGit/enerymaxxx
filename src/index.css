@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Poppins", system-ui, sans-serif;
+
+  --color-deep-green: #0b6e4f;
+  --color-emerald: #2ecc71;
+  --color-charcoal: #1f2937;
+  --color-soft-gray: #f5f7fa;
+  --color-gold: #f4b400;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 2s infinite;
+  --animate-float-slow: float 8s ease-in-out 1s infinite;
+  --animate-fade-in-up: fade-in-up 0.7s ease-out both;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-18px) rotate(4deg);
+    }
+  }
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-soft-gray);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background-color: #0f1512;
+  color: #e5e7eb;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background-color: var(--color-emerald);
+  color: white;
+}
+
+/* Glassmorphism helper */
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass {
+  background: rgba(31, 41, 55, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-deep-green);
+  border-radius: 999px;
+}
