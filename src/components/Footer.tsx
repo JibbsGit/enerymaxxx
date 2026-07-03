@@ -88,9 +88,8 @@ export function Footer() {
 
         <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <a href="#home" className="flex items-center gap-2 font-heading text-lg font-bold text-white">
-              <img src="/icons/icon-192.png" alt="" className="h-10 w-10" width={40} height={40} />
-              Energy<span className="text-emerald">Maxx</span>
+            <a href="#home" className="flex items-center">
+              <img src="/logo.png" alt="EnergyMaxx Solutions Limited" className="h-20 w-auto" width={900} height={254} />
             </a>
             <p className="mt-4 text-sm leading-relaxed">
               Powering a cleaner tomorrow through biodigesters, biogas power, sustainable agribusiness, and

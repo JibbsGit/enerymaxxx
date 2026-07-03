@@ -29,12 +29,9 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
         scrolled ? 'glass shadow-lg shadow-charcoal/5' : 'bg-transparent'
       }`}
     >
-      <Container className="flex h-20 items-center justify-between py-3">
-        <a href="#home" className="flex items-center gap-2 font-heading text-lg font-bold">
-          <img src="/icons/icon-192.png" alt="" className="h-10 w-10" width={40} height={40} />
-          <span className={scrolled || open ? 'text-charcoal dark:text-white' : 'text-charcoal dark:text-white'}>
-            Energy<span className="text-emerald">Maxx</span>
-          </span>
+      <Container className="flex h-24 items-center justify-between py-3">
+        <a href="#home" className="flex items-center">
+          <img src="/logo.png" alt="EnergyMaxx Solutions Limited" className="h-16 w-auto sm:h-20" width={900} height={254} />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
