@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X, Moon, Sun, Leaf } from 'lucide-react'
+import { Menu, X, Moon, Sun } from 'lucide-react'
 import { Container } from './ui/Container'
 import { LinkButton } from './ui/Button'
 import { navLinks, site } from '../data/site'
@@ -31,9 +31,7 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
     >
       <Container className="flex h-20 items-center justify-between py-3">
         <a href="#home" className="flex items-center gap-2 font-heading text-lg font-bold">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald to-deep-green text-white shadow-md shadow-emerald/30">
-            <Leaf size={20} />
-          </span>
+          <img src="/icons/icon-192.png" alt="" className="h-10 w-10" width={40} height={40} />
           <span className={scrolled || open ? 'text-charcoal dark:text-white' : 'text-charcoal dark:text-white'}>
             Energy<span className="text-emerald">Maxx</span>
           </span>

@@ -89,7 +89,7 @@ export function Contact() {
           >
             <iframe
               title="EnergyMaxx Solutions Office Location"
-              src="https://www.google.com/maps?q=Lekki%20Lagos%20Nigeria&output=embed"
+              src="https://www.google.com/maps?q=Lagos%2C%20Nigeria&output=embed"
               className="h-80 w-full border-0 lg:h-full lg:min-h-[420px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

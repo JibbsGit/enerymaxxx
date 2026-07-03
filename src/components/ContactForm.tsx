@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle2, Send } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 import { Button } from './ui/Button'
 
 interface FormData {
@@ -26,6 +27,12 @@ const initialData: FormData = {
 
 const serviceOptions = ['Renewable Energy', 'Biodigester', 'Clean Gas Plant', 'Consultation', 'Other']
 
+const RECIPIENT_EMAIL = 'energymaxxsolutionslmt@gmail.com'
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
+
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
 }
@@ -38,6 +45,8 @@ export function ContactForm() {
   const [data, setData] = useState<FormData>(initialData)
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({})
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState(false)
 
   const validate = (): boolean => {
     const next: Partial<Record<keyof FormData, string>> = {}
@@ -53,11 +62,33 @@ export function ContactForm() {
     return Object.keys(next).length === 0
   }
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     if (!validate()) return
-    setSubmitted(true)
-    setData(initialData)
+
+    setSending(true)
+    setSendError(false)
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          full_name: data.fullName,
+          company_name: data.companyName || 'N/A',
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          message: data.message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY },
+      )
+      setSubmitted(true)
+      setData(initialData)
+    } catch {
+      setSendError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   const field =
@@ -73,9 +104,9 @@ export function ContactForm() {
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald text-white">
           <CheckCircle2 size={32} />
         </div>
-        <h3 className="mt-6 font-heading text-xl font-bold text-charcoal dark:text-white">Thank you!</h3>
+        <h3 className="mt-6 font-heading text-xl font-bold text-charcoal dark:text-white">Request sent!</h3>
         <p className="mt-2 max-w-sm text-sm text-charcoal/60 dark:text-white/60">
-          Your consultation request has been received. Our team will reach out to you shortly.
+          Thanks for reaching out. Our team has received your request and will get back to you shortly.
         </p>
         <Button variant="outlineDark" className="mt-6" onClick={() => setSubmitted(false)}>
           Send another request
@@ -175,9 +206,18 @@ export function ContactForm() {
         {errors.agree && <p className="mt-1 text-xs text-red-500">{errors.agree}</p>}
       </div>
 
-      <div className="sm:col-span-2">
-        <Button type="submit" variant="primary" className="w-full">
-          Request Consultation <Send size={16} />
+      <div className="sm:col-span-2 pb-16 lg:pb-0">
+        {sendError && (
+          <p className="mb-3 text-sm text-red-500">
+            Something went wrong sending your request. Please try again, or email us directly at{' '}
+            <a href={`mailto:${RECIPIENT_EMAIL}`} className="underline">
+              {RECIPIENT_EMAIL}
+            </a>
+            .
+          </p>
+        )}
+        <Button type="submit" variant="primary" className="w-full" disabled={sending}>
+          {sending ? 'Sending...' : 'Request Consultation'} <Send size={16} />
         </Button>
       </div>
     </form>

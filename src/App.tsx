@@ -7,6 +7,7 @@ import { Services } from './components/Services'
 import { WhyChooseUs } from './components/WhyChooseUs'
 import { Process } from './components/Process'
 import { Projects } from './components/Projects'
+import { Gallery } from './components/Gallery'
 import { Testimonials } from './components/Testimonials'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
@@ -36,6 +37,7 @@ function App() {
         <WhyChooseUs />
         <Process />
         <Projects />
+        <Gallery />
         <Testimonials />
         <Contact />
       </main>

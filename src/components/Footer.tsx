@@ -1,4 +1,4 @@
-import { Leaf, Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MapPin } from 'lucide-react'
 import { Container } from './ui/Container'
 import { navLinks, site } from '../data/site'
 import { serviceCategories } from '../data/services'
@@ -11,9 +11,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <a href="#home" className="flex items-center gap-2 font-heading text-lg font-bold text-white">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald to-deep-green text-white">
-                <Leaf size={20} />
-              </span>
+              <img src="/icons/icon-192.png" alt="" className="h-10 w-10" width={40} height={40} />
               Energy<span className="text-emerald">Maxx</span>
             </a>
             <p className="mt-4 text-sm leading-relaxed">

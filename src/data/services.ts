@@ -16,18 +16,6 @@ export interface ServiceCategory {
 
 export const serviceCategories: ServiceCategory[] = [
   {
-    id: 'renewable-energy',
-    title: 'Renewable Energy',
-    description: 'Harnessing solar and hybrid technology to power homes, businesses, and communities.',
-    accent: 'from-emerald to-deep-green',
-    items: [
-      { label: 'Solar Energy Systems', icon: Sun },
-      { label: 'Energy Storage', icon: Battery },
-      { label: 'Hybrid Energy Systems', icon: Zap },
-      { label: 'Energy Consultation', icon: Users2 },
-    ],
-  },
-  {
     id: 'biodigesters',
     title: 'Biodigesters',
     description: 'Converting organic waste into clean, renewable energy for homes and industry.',
@@ -49,6 +37,18 @@ export const serviceCategories: ServiceCategory[] = [
       { label: 'Clean Cooking Solutions', icon: UtensilsCrossed },
       { label: 'Gas Storage Systems', icon: Warehouse },
       { label: 'Installation & Maintenance', icon: Wrench },
+    ],
+  },
+  {
+    id: 'renewable-energy',
+    title: 'Renewable Energy',
+    description: 'Harnessing solar and hybrid technology to power homes, businesses, and communities.',
+    accent: 'from-emerald to-deep-green',
+    items: [
+      { label: 'Solar Energy Systems', icon: Sun },
+      { label: 'Energy Storage', icon: Battery },
+      { label: 'Hybrid Energy Systems', icon: Zap },
+      { label: 'Energy Consultation', icon: Users2 },
     ],
   },
 ]
