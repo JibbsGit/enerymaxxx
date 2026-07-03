@@ -1,21 +1,100 @@
-import { Phone, Mail, MapPin } from 'lucide-react'
+import { useState } from 'react'
+import type { FormEvent } from 'react'
+import { Phone, Mail, MapPin, Send } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 import { Container } from './ui/Container'
+import { Button } from './ui/Button'
 import { navLinks, site } from '../data/site'
-import { serviceCategories } from '../data/services'
+import { serviceDivisions } from '../data/services'
 import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon } from './ui/SocialIcons'
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
+
+function NewsletterForm() {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    if (!email.trim()) return
+
+    setStatus('sending')
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          full_name: 'Newsletter Signup',
+          company_name: 'N/A',
+          email,
+          phone: 'N/A',
+          service: 'Newsletter',
+          message: `New newsletter subscription request from ${email}.`,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY },
+      )
+      setStatus('sent')
+      setEmail('')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  if (status === 'sent') {
+    return <p className="text-sm font-medium text-emerald">Thanks for subscribing — we'll be in touch!</p>
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
+      <input
+        type="email"
+        required
+        placeholder="Your email address"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="w-full rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white outline-none transition-colors placeholder:text-white/40 focus:border-emerald sm:w-72"
+      />
+      <Button type="submit" variant="accent" disabled={status === 'sending'} className="shrink-0">
+        {status === 'sending' ? 'Subscribing...' : 'Subscribe'} <Send size={16} />
+      </Button>
+      {status === 'error' && <p className="text-xs text-red-400">Something went wrong — please try again.</p>}
+    </form>
+  )
+}
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal pt-16 pb-8 text-white/70">
-      <Container>
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <footer className="relative overflow-hidden bg-charcoal pt-16 pb-8 text-white/70">
+      <img
+        src="/images/placeholders/aerial-solar-farmland.jpg"
+        alt=""
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover opacity-20"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
+
+      <Container className="relative">
+        <div className="flex flex-col items-start justify-between gap-6 border-b border-white/10 pb-10 lg:flex-row lg:items-center">
+          <div>
+            <h4 className="font-heading text-lg font-bold text-white">Stay Updated</h4>
+            <p className="mt-1 text-sm text-white/60">
+              Get news on our latest energy and agribusiness projects — no spam, ever.
+            </p>
+          </div>
+          <NewsletterForm />
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <a href="#home" className="flex items-center gap-2 font-heading text-lg font-bold text-white">
               <img src="/icons/icon-192.png" alt="" className="h-10 w-10" width={40} height={40} />
               Energy<span className="text-emerald">Maxx</span>
             </a>
             <p className="mt-4 text-sm leading-relaxed">
-              Powering a cleaner tomorrow through renewable energy, biodigesters, and clean gas plant solutions.
+              Powering a cleaner tomorrow through renewable energy, biodigesters, clean gas plants, and sustainable
+              agribusiness.
             </p>
             <div className="mt-5 flex gap-3">
               {[
@@ -53,10 +132,10 @@ export function Footer() {
           <div>
             <h4 className="font-heading text-sm font-bold uppercase tracking-wide text-white">Services</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {serviceCategories.map((category) => (
-                <li key={category.id}>
+              {serviceDivisions.map((division) => (
+                <li key={division}>
                   <a href="#services" className="transition-colors hover:text-emerald">
-                    {category.title}
+                    {division}
                   </a>
                 </li>
               ))}

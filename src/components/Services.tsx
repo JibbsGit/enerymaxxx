@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
-import { serviceCategories } from '../data/services'
+import { services } from '../data/services'
 
 export function Services() {
   return (
@@ -11,49 +11,39 @@ export function Services() {
         <SectionHeading
           eyebrow="What We Offer"
           title="Our Services"
-          description="Comprehensive clean-energy solutions engineered for homes, businesses, and communities."
+          description="Seven divisions, one mission — sustainable energy and agriculture engineered for homes, businesses, and communities."
         />
 
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {serviceCategories.map((category, i) => (
-            <motion.div
-              key={category.id}
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service, i) => (
+            <motion.a
+              key={service.id}
+              href="#contact"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-md shadow-charcoal/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald/20 dark:bg-white/5"
+              transition={{ duration: 0.6, delay: i * 0.08 }}
+              className="group relative aspect-4/5 overflow-hidden rounded-3xl shadow-md shadow-charcoal/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald/20"
             >
-              <div
-                className={`absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br ${category.accent} opacity-10 transition-transform duration-500 group-hover:scale-150`}
+              <img
+                src={service.image}
+                alt={service.title}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/30 to-transparent" />
 
-              <div className={`relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${category.accent} text-white shadow-lg`}>
-                <span className="font-heading text-xl font-bold">{i + 1}</span>
+              <div className="absolute inset-x-0 bottom-0 p-5">
+                <span className="inline-block rounded-full bg-orange/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
+                  {service.division}
+                </span>
+                <h3 className="mt-3 font-heading text-lg font-bold text-white">{service.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-white/75">{service.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald transition-transform duration-300 group-hover:translate-x-1">
+                  Request this service <ArrowUpRight size={16} />
+                </span>
               </div>
-
-              <h3 className="relative mt-6 font-heading text-xl font-bold text-charcoal dark:text-white">{category.title}</h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-charcoal/60 dark:text-white/60">{category.description}</p>
-
-              <ul className="relative mt-6 space-y-3">
-                {category.items.map((item) => (
-                  <li key={item.label} className="flex items-center gap-3 text-sm text-charcoal/80 dark:text-white/80">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald/10 text-deep-green dark:bg-emerald/15 dark:text-emerald">
-                      <item.icon size={16} />
-                    </span>
-                    {item.label}
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="#contact"
-                className="relative mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-deep-green transition-colors group-hover:text-emerald dark:text-emerald"
-              >
-                Request this service
-                <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </a>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </Container>

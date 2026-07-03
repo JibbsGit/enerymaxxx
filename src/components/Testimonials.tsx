@@ -32,7 +32,7 @@ export function Testimonials() {
             <Quote size={26} />
           </div>
 
-          <div className="relative mt-6 min-h-56 sm:min-h-44">
+          <div className="relative mt-6 min-h-64 sm:min-h-48">
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -45,8 +45,13 @@ export function Testimonials() {
                 <p className="text-lg font-medium leading-relaxed text-charcoal/80 sm:text-xl dark:text-white/80">
                   "{current.quote}"
                 </p>
-                <div className="mt-6">
-                  <p className="font-heading font-bold text-charcoal dark:text-white">{current.name}</p>
+                <div className="mt-6 flex flex-col items-center">
+                  <img
+                    src={current.avatar}
+                    alt={current.name}
+                    className="h-14 w-14 rounded-full object-cover shadow-md ring-4 ring-emerald/15"
+                  />
+                  <p className="mt-3 font-heading font-bold text-charcoal dark:text-white">{current.name}</p>
                   <p className="text-sm text-emerald">{current.role}</p>
                 </div>
               </motion.div>

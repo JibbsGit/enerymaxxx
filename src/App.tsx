@@ -3,7 +3,9 @@ import { AnimatePresence } from 'framer-motion'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
+import { Divisions } from './components/Divisions'
 import { Services } from './components/Services'
+import { CircularEconomy } from './components/CircularEconomy'
 import { WhyChooseUs } from './components/WhyChooseUs'
 import { Process } from './components/Process'
 import { Projects } from './components/Projects'
@@ -33,7 +35,9 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Divisions />
         <Services />
+        <CircularEconomy />
         <WhyChooseUs />
         <Process />
         <Projects />

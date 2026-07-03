@@ -14,14 +14,14 @@ function StatCard({ stat, index }: { stat: (typeof stats)[number]; index: number
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="rounded-2xl glass p-6 text-center"
+      className="rounded-2xl border border-white/15 bg-white/10 p-6 text-center backdrop-blur-md"
     >
       <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald/15 text-emerald">
         <stat.icon size={22} />
       </div>
       <div className="mt-4 font-heading text-3xl font-bold text-white sm:text-4xl">
         {value}
-        <span className="text-emerald">{stat.suffix}</span>
+        <span className="text-orange">{stat.suffix}</span>
       </div>
       <p className="mt-2 text-sm font-medium text-white/60">{stat.label}</p>
     </motion.div>
@@ -30,7 +30,14 @@ function StatCard({ stat, index }: { stat: (typeof stats)[number]; index: number
 
 export function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-charcoal via-deep-green/90 to-charcoal py-24">
+    <section className="relative overflow-hidden bg-charcoal py-24">
+      <img
+        src="/images/placeholders/aerial-solar-farmland.jpg"
+        alt=""
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-charcoal/95 via-deep-green/80 to-charcoal/95" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(46,204,113,0.2),transparent_50%)]" />
       <Container className="relative">
         <SectionHeading

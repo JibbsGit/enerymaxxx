@@ -9,14 +9,17 @@
   --color-deep-green: #0b6e4f;
   --color-emerald: #2ecc71;
   --color-charcoal: #1f2937;
-  --color-soft-gray: #f5f7fa;
+  --color-soft-gray: #f7f9fa;
   --color-gold: #f4b400;
+  --color-orange: #f97316;
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-delayed: float 6s ease-in-out 2s infinite;
   --animate-float-slow: float 8s ease-in-out 1s infinite;
   --animate-fade-in-up: fade-in-up 0.7s ease-out both;
   --animate-marquee: marquee 40s linear infinite;
+  --animate-drift: drift 12s ease-in infinite;
+  --animate-kenburns: kenburns 8s ease-out both;
 
   @keyframes float {
     0%,
@@ -25,6 +28,30 @@
     }
     50% {
       transform: translateY(-18px) rotate(4deg);
+    }
+  }
+  @keyframes drift {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    90% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(-90vh) translateX(30px);
+      opacity: 0;
+    }
+  }
+  @keyframes kenburns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
     }
   }
   @keyframes fade-in-up {

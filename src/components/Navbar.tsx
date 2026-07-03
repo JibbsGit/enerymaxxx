@@ -57,7 +57,7 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <LinkButton href="#contact" variant="primary" className="px-5 py-3 text-sm">
+          <LinkButton href="#contact" variant="accent" className="px-5 py-3 text-sm">
             Get a Free Consultation
           </LinkButton>
         </div>
@@ -100,7 +100,7 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
                   {link.label}
                 </a>
               ))}
-              <LinkButton href="#contact" variant="primary" onClick={() => setOpen(false)} className="mt-3 w-full">
+              <LinkButton href="#contact" variant="accent" onClick={() => setOpen(false)} className="mt-3 w-full">
                 Get a Free Consultation
               </LinkButton>
               <p className="mt-3 text-center text-xs text-charcoal/50 dark:text-white/50">{site.phones[0]}</p>

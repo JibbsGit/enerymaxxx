@@ -5,6 +5,7 @@ const base =
 
 const variants = {
   primary: 'bg-emerald text-white shadow-lg shadow-emerald/30 hover:bg-deep-green hover:shadow-xl hover:shadow-deep-green/30 hover:-translate-y-0.5',
+  accent: 'bg-orange text-white shadow-lg shadow-orange/30 hover:brightness-105 hover:shadow-xl hover:shadow-orange/40 hover:-translate-y-0.5',
   outline:
     'border-2 border-white/40 text-white hover:border-white hover:bg-white/10 backdrop-blur-sm',
   outlineDark:

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { CheckCircle2, Send } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 import { Button } from './ui/Button'
+import { serviceDivisions } from '../data/services'
 
 interface FormData {
   fullName: string
@@ -25,7 +26,7 @@ const initialData: FormData = {
   agree: false,
 }
 
-const serviceOptions = ['Renewable Energy', 'Biodigester', 'Clean Gas Plant', 'Consultation', 'Other']
+const serviceOptions = [...serviceDivisions, 'General Consultation', 'Other']
 
 const RECIPIENT_EMAIL = 'energymaxxsolutionslmt@gmail.com'
 
@@ -216,7 +217,7 @@ export function ContactForm() {
             .
           </p>
         )}
-        <Button type="submit" variant="primary" className="w-full" disabled={sending}>
+        <Button type="submit" variant="accent" className="w-full" disabled={sending}>
           {sending ? 'Sending...' : 'Request Consultation'} <Send size={16} />
         </Button>
       </div>

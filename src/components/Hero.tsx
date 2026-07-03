@@ -1,7 +1,16 @@
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Sun, Wind, Flame, Leaf, Zap, Globe2, ArrowRight, PhoneCall } from 'lucide-react'
 import { Container } from './ui/Container'
 import { LinkButton } from './ui/Button'
+
+const heroImages = [
+  '/images/projects/utility-scale-solar-farm.jpg',
+  '/images/projects/biodigester-construction-1.jpg',
+  '/images/placeholders/greenhouse-farm.jpg',
+  '/images/placeholders/aerial-solar-farmland.jpg',
+  '/images/projects/rooftop-solar-array.jpg',
+]
 
 const floaters = [
   { icon: Sun, className: 'left-[6%] top-[18%]', animation: 'animate-float', size: 46 },
@@ -12,14 +21,65 @@ const floaters = [
   { icon: Globe2, className: 'right-[42%] bottom-[10%]', animation: 'animate-float-slow', size: 44 },
 ]
 
+const particles = Array.from({ length: 12 }, (_, i) => ({
+  left: `${(i * 37) % 100}%`,
+  delay: `${(i * 1.3) % 12}s`,
+  duration: `${10 + (i % 5)}s`,
+  size: 3 + (i % 4),
+}))
+
 export function Hero() {
+  const [imageIndex, setImageIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setImageIndex((i) => (i + 1) % heroImages.length)
+    }, 7000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-charcoal via-deep-green to-charcoal pt-24"
+      className="relative flex min-h-screen items-center overflow-hidden bg-charcoal pt-24"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(46,204,113,0.35),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(244,180,0,0.18),transparent_45%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
+      <div className="absolute inset-0">
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={imageIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
+            className="absolute inset-0"
+          >
+            <div
+              className="animate-kenburns h-full w-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${heroImages[imageIndex]})` }}
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="absolute inset-0 bg-charcoal/70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-charcoal/60" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(46,204,113,0.25),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(249,115,22,0.15),transparent_45%)]" />
+
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {particles.map((p, i) => (
+          <span
+            key={i}
+            className="animate-drift absolute bottom-0 rounded-full bg-emerald/60 blur-[1px]"
+            style={{
+              left: p.left,
+              width: p.size,
+              height: p.size,
+              animationDelay: p.delay,
+              animationDuration: p.duration,
+            }}
+          />
+        ))}
+      </div>
 
       {floaters.map(({ icon: Icon, className, animation, size }, i) => (
         <div
@@ -37,7 +97,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 rounded-full border border-emerald/30 bg-emerald/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-emerald uppercase"
         >
-          <Leaf size={14} /> Renewable Energy · Biodigesters · Clean Gas
+          <Leaf size={14} /> Renewable Energy · Biodigesters · Clean Gas · Agribusiness
         </motion.span>
 
         <motion.h1
@@ -46,7 +106,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mx-auto mt-6 max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
         >
-          Powering a Cleaner Tomorrow Through <span className="text-emerald">Sustainable Energy</span>
+          Transforming Africa Through <span className="text-emerald">Sustainable Energy</span> &amp;{' '}
+          <span className="text-orange">Agriculture</span>
         </motion.h1>
 
         <motion.p
@@ -55,8 +116,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
         >
-          EnergyMaxx Solutions Limited provides innovative renewable energy systems, biodigesters, and clean gas
-          plant solutions that help businesses and communities reduce costs while protecting the environment.
+          EnergyMaxx Solutions Limited delivers renewable energy, biodigesters, clean gas plants, and sustainable
+          agribusiness — from solar farms to snail farms — engineered for performance and lasting impact.
         </motion.p>
 
         <motion.div
@@ -65,7 +126,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <LinkButton href="#contact" variant="primary">
+          <LinkButton href="#contact" variant="accent">
             Get a Free Consultation <ArrowRight size={16} />
           </LinkButton>
           <LinkButton href="#contact" variant="outline">
