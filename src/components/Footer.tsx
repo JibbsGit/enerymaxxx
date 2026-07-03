@@ -93,8 +93,8 @@ export function Footer() {
               Energy<span className="text-emerald">Maxx</span>
             </a>
             <p className="mt-4 text-sm leading-relaxed">
-              Powering a cleaner tomorrow through renewable energy, biodigesters, clean gas plants, and sustainable
-              agribusiness.
+              Powering a cleaner tomorrow through biodigesters, biogas power, sustainable agribusiness, and
+              renewable energy.
             </p>
             <div className="mt-5 flex gap-3">
               {[

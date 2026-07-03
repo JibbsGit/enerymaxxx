@@ -11,7 +11,7 @@ export function Projects() {
         <SectionHeading
           eyebrow="Our Work"
           title="Featured Projects"
-          description="A glimpse into the solar installations, biodigester plants, gas systems, and agribusiness ventures we've delivered."
+          description="A glimpse into the biodigester plants, biogas systems, agribusiness ventures, and solar installations we've delivered."
         />
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

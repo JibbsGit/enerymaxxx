@@ -8,18 +8,18 @@ export interface Division {
 
 export const divisions: Division[] = [
   {
-    id: 'energy',
-    title: 'Renewable Energy & Clean Gas',
+    id: 'biogas',
+    title: 'Biodigesters & Biogas Power',
     description:
-      'Solar power, battery storage, biodigesters, and clean gas plants engineered to cut costs and emissions for homes, businesses, and communities.',
-    image: '/images/projects/utility-scale-solar-farm.jpg',
-    cta: 'Explore Energy Solutions',
+      'Our flagship offering — converting organic waste into biogas that fuels generators for clean, dependable electricity for homes, farms, and industry.',
+    image: '/images/projects/biodigester-construction-1.jpg',
+    cta: 'Explore Biogas Power',
   },
   {
     id: 'agribusiness',
     title: 'Sustainable Agribusiness',
     description:
-      'Mushroom cultivation, snail farming, honey production, and modern greenhouse agribusiness — building food security through sustainable practice.',
+      'Snail farming, mushroom cultivation, honey production, and modern greenhouse agribusiness — building food security through sustainable practice.',
     image: '/images/placeholders/greenhouse-farm.jpg',
     cta: 'Explore Agribusiness',
   },

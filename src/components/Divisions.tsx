@@ -11,8 +11,8 @@ export function Divisions() {
       <Container>
         <SectionHeading
           eyebrow="Two Divisions, One Mission"
-          title="Powering Energy. Growing Agribusiness."
-          description="EnergyMaxx operates at the intersection of clean energy and sustainable agriculture."
+          title="Powering Biogas. Growing Agribusiness."
+          description="EnergyMaxx operates at the intersection of biogas power and sustainable agriculture."
         />
       </Container>
 

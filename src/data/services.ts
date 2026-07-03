@@ -7,43 +7,28 @@ export interface ServiceItem {
 }
 
 export const serviceDivisions = [
-  'Renewable Energy',
-  'Biodigesters',
-  'Clean Gas Plants',
+  'Biodigesters & Biogas Power',
   'Snail Farming',
   'Mushroom Cultivation',
   'Honey Production',
   'Agribusiness',
+  'Renewable Energy',
 ]
 
 export const services: ServiceItem[] = [
   {
-    id: 'solar-systems',
-    title: 'Solar Systems',
-    division: 'Renewable Energy',
-    description: 'Rooftop and utility-scale solar installations engineered for maximum yield and long-term reliability.',
-    image: '/images/projects/rooftop-solar-array.jpg',
-  },
-  {
-    id: 'battery-storage',
-    title: 'Battery Storage',
-    division: 'Renewable Energy',
-    description: 'Hybrid battery systems that keep power flowing around the clock, even off the grid.',
-    image: '/images/projects/hybrid-solar-storage.jpg',
-  },
-  {
     id: 'biodigesters',
     title: 'Biodigesters',
-    division: 'Biodigesters',
-    description: 'Converting organic waste into clean, renewable biogas for homes, farms, and industry.',
+    division: 'Biodigesters & Biogas Power',
+    description: 'Our flagship offering — converting organic waste into clean biogas for homes, farms, and industry.',
     image: '/images/projects/biodigester-construction-1.jpg',
   },
   {
-    id: 'clean-gas-plants',
-    title: 'Clean Gas Plants',
-    division: 'Clean Gas Plants',
-    description: 'Safe, efficient LPG infrastructure and clean cooking solutions built for scale.',
-    image: '/images/projects/lpg-gas-plant.jpg',
+    id: 'biogas-generators',
+    title: 'Biogas Power Generators',
+    division: 'Biodigesters & Biogas Power',
+    description: 'Biogas-fueled generator systems that turn digester output into dependable, low-cost electricity.',
+    image: '/images/gallery/gas-cylinder-generator.jpg',
   },
   {
     id: 'snail-farming',
@@ -72,5 +57,19 @@ export const services: ServiceItem[] = [
     division: 'Agribusiness',
     description: 'Irrigation systems, greenhouses, and modern farming technology for smallholder and commercial farms.',
     image: '/images/placeholders/greenhouse-farm.jpg',
+  },
+  {
+    id: 'solar-systems',
+    title: 'Solar Systems',
+    division: 'Renewable Energy',
+    description: 'Rooftop and utility-scale solar installations engineered for maximum yield and long-term reliability.',
+    image: '/images/projects/rooftop-solar-array.jpg',
+  },
+  {
+    id: 'battery-storage',
+    title: 'Battery Storage',
+    division: 'Renewable Energy',
+    description: 'Hybrid battery systems that keep power flowing around the clock, even off the grid.',
+    image: '/images/projects/hybrid-solar-storage.jpg',
   },
 ]

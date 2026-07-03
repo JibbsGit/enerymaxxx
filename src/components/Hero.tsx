@@ -5,11 +5,11 @@ import { Container } from './ui/Container'
 import { LinkButton } from './ui/Button'
 
 const heroImages = [
-  '/images/projects/utility-scale-solar-farm.jpg',
   '/images/projects/biodigester-construction-1.jpg',
-  '/images/placeholders/greenhouse-farm.jpg',
-  '/images/placeholders/aerial-solar-farmland.jpg',
-  '/images/projects/rooftop-solar-array.jpg',
+  '/images/gallery/gas-cylinder-generator.jpg',
+  '/images/placeholders/snail-farm.jpg',
+  '/images/placeholders/beekeeper-honey.jpg',
+  '/images/projects/utility-scale-solar-farm.jpg',
 ]
 
 const floaters = [
@@ -97,7 +97,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 rounded-full border border-emerald/30 bg-emerald/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-emerald uppercase"
         >
-          <Leaf size={14} /> Renewable Energy · Biodigesters · Clean Gas · Agribusiness
+          <Leaf size={14} /> Biodigesters · Biogas Power · Agribusiness · Solar
         </motion.span>
 
         <motion.h1
@@ -106,8 +106,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mx-auto mt-6 max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
         >
-          Transforming Africa Through <span className="text-emerald">Sustainable Energy</span> &amp;{' '}
-          <span className="text-orange">Agriculture</span>
+          Transforming Africa Through <span className="text-emerald">Biogas Power</span> &amp;{' '}
+          <span className="text-orange">Sustainable Agriculture</span>
         </motion.h1>
 
         <motion.p
@@ -116,8 +116,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
         >
-          EnergyMaxx Solutions Limited delivers renewable energy, biodigesters, clean gas plants, and sustainable
-          agribusiness — from solar farms to snail farms — engineered for performance and lasting impact.
+          EnergyMaxx Solutions Limited delivers biodigesters and biogas-powered generators, sustainable
+          agribusiness — snail farming, mushroom cultivation, and honey production — and solar energy systems,
+          engineered for performance and lasting impact.
         </motion.p>
 
         <motion.div

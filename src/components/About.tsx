@@ -24,16 +24,16 @@ export function About() {
           >
             <div className="relative aspect-4/5 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-charcoal/20">
               <img
-                src="/images/placeholders/solar-installation.jpg"
-                alt="EnergyMaxx engineers installing a solar system"
+                src="/images/projects/biodigester-construction-1.jpg"
+                alt="EnergyMaxx biodigester construction site"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent" />
             </div>
             <div className="absolute -bottom-6 -right-4 hidden max-w-[220px] rounded-2xl bg-white p-5 shadow-xl shadow-charcoal/20 sm:block dark:bg-charcoal dark:shadow-black/40">
-              <p className="font-heading text-3xl font-bold text-orange">7+</p>
-              <p className="mt-1 text-sm text-charcoal/60 dark:text-white/60">Divisions delivering clean energy and sustainable agribusiness</p>
+              <p className="font-heading text-3xl font-bold text-orange">6</p>
+              <p className="mt-1 text-sm text-charcoal/60 dark:text-white/60">Divisions delivering biogas power and sustainable agribusiness</p>
             </div>
           </motion.div>
 
@@ -48,12 +48,13 @@ export function About() {
               About EnergyMaxx
             </span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl dark:text-white">
-              A Trusted Partner in Clean Energy &amp; Sustainable Agriculture
+              A Trusted Partner in Biogas Power &amp; Sustainable Agriculture
             </h2>
             <p className="mt-4 text-base leading-relaxed text-charcoal/60 dark:text-white/60">
-              EnergyMaxx Solutions Limited is a renewable energy and agribusiness company dedicated to environmentally
-              friendly solutions — from solar systems and biodigesters to clean gas plants, snail farming, mushroom
-              cultivation, and honey production — engineered for performance, safety, and long-term sustainability.
+              EnergyMaxx Solutions Limited is a biogas energy and agribusiness company dedicated to environmentally
+              friendly solutions — from biodigesters and biogas-powered generators to snail farming, mushroom
+              cultivation, and honey production, with solar energy systems rounding out our portfolio — engineered
+              for performance, safety, and long-term sustainability.
             </p>
 
             <div className="mt-8 space-y-4">
