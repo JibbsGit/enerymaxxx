@@ -13,8 +13,8 @@ const heroImages = [
 ]
 
 const floaters = [
-  { icon: Sun, className: 'left-[6%] top-[18%]', animation: 'animate-float', size: 46 },
-  { icon: Wind, className: 'right-[10%] top-[14%]', animation: 'animate-float-delayed', size: 40 },
+  { icon: Sun, className: 'left-[6%] top-[28%]', animation: 'animate-float', size: 46 },
+  { icon: Wind, className: 'right-[10%] top-[24%]', animation: 'animate-float-delayed', size: 40 },
   { icon: Flame, className: 'left-[12%] bottom-[20%]', animation: 'animate-float-slow', size: 38 },
   { icon: Leaf, className: 'right-[16%] bottom-[16%]', animation: 'animate-float', size: 42 },
   { icon: Zap, className: 'left-[45%] top-[22%]', animation: 'animate-float-delayed', size: 34 },
@@ -41,7 +41,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-charcoal pt-20 lg:pt-36"
+      className="relative flex min-h-screen items-center overflow-hidden bg-charcoal pt-32 lg:pt-48"
     >
       <div className="absolute inset-0">
         <AnimatePresence mode="sync">

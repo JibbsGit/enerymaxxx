@@ -29,12 +29,12 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
         scrolled ? 'glass shadow-lg shadow-charcoal/5' : 'bg-transparent'
       }`}
     >
-      <Container className="flex h-20 items-center justify-between py-2">
+      <Container className="flex h-32 items-center justify-between py-2">
         <a href="#home" className="flex items-center">
           <img
             src="/logo.png"
             alt="EnergyMaxx Solutions Limited"
-            className="h-14 w-auto sm:h-16"
+            className="h-24 w-auto sm:h-28"
             width={1218}
             height={360}
           />

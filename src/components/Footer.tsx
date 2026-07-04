@@ -92,7 +92,7 @@ export function Footer() {
               <img
                 src="/logo.png"
                 alt="EnergyMaxx Solutions Limited"
-                className="h-20 w-auto"
+                className="h-32 w-auto"
                 width={1218}
                 height={360}
               />
