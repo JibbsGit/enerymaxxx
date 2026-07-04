@@ -43,7 +43,7 @@ export function WhyChooseUs() {
         <SectionHeading
           eyebrow="Why Choose EnergyMaxx"
           title="Trusted for Performance, Built for the Future"
-          description="Our track record speaks for itself — from certified engineering to responsive support, every metric reflects our commitment to excellence."
+          description="Our track record speaks for itself. From certified engineering to responsive support, every metric reflects our commitment to excellence."
           light
         />
 

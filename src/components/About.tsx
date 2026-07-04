@@ -3,7 +3,7 @@ import { Lightbulb, Leaf, ShieldCheck, Cpu, Smile } from 'lucide-react'
 import { Container } from './ui/Container'
 
 const pillars = [
-  { title: 'Innovation', description: 'Forward-thinking engineering that keeps our clients ahead of the curve.', icon: Lightbulb },
+  { title: 'Innovation', description: 'Forward thinking engineering that keeps our clients ahead of the curve.', icon: Lightbulb },
   { title: 'Sustainability', description: 'Every solution is designed to protect the environment for generations to come.', icon: Leaf },
   { title: 'Reliability', description: 'Dependable systems, backed by rigorous testing and quality assurance.', icon: ShieldCheck },
   { title: 'Clean Technology', description: 'We deploy proven, efficient technology to maximize performance and savings.', icon: Cpu },
@@ -52,9 +52,9 @@ export function About() {
             </h2>
             <p className="mt-4 text-base leading-relaxed text-charcoal/60 dark:text-white/60">
               EnergyMaxx Solutions Limited is a biogas energy and agribusiness company dedicated to environmentally
-              friendly solutions — from biodigesters and biogas-powered generators to snail farming, mushroom
-              cultivation, and honey production, with solar energy systems rounding out our portfolio — engineered
-              for performance, safety, and long-term sustainability.
+              friendly solutions, from biodigesters and biogas powered plants to snail farming, mushroom
+              cultivation, and natural honey production, with solar energy systems rounding out our portfolio. Every
+              solution is engineered for performance, safety, and long term sustainability.
             </p>
 
             <div className="mt-8 space-y-4">

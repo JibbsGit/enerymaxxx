@@ -29,24 +29,18 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
         scrolled ? 'glass shadow-lg shadow-charcoal/5' : 'bg-transparent'
       }`}
     >
-      <Container className="flex h-24 items-center justify-between py-3">
+      <Container className="flex h-20 items-center justify-between py-2">
         <a href="#home" className="flex items-center">
-          <img src="/logo.png" alt="EnergyMaxx Solutions Limited" className="h-16 w-auto sm:h-20" width={900} height={254} />
+          <img
+            src="/logo.png"
+            alt="EnergyMaxx Solutions Limited"
+            className="h-14 w-auto sm:h-16"
+            width={1218}
+            height={360}
+          />
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-charcoal/80 transition-colors hover:text-emerald dark:text-white/80 dark:hover:text-emerald"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="flex items-center gap-3">
           <button
             onClick={toggleDark}
             aria-label="Toggle dark mode"
@@ -54,28 +48,35 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <LinkButton href="#contact" variant="accent" className="px-5 py-3 text-sm">
-            Get a Free Consultation
-          </LinkButton>
-        </div>
-
-        <div className="flex items-center gap-3 lg:hidden">
-          <button
-            onClick={toggleDark}
-            aria-label="Toggle dark mode"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/10 text-charcoal dark:border-white/15 dark:text-white"
-          >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/10 text-charcoal dark:border-white/15 dark:text-white"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/10 text-charcoal lg:hidden dark:border-white/15 dark:text-white"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </Container>
+
+      <div className="hidden lg:block">
+        <Container className="flex h-16 items-center justify-between">
+          <nav className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-charcoal/80 transition-colors hover:text-emerald dark:text-white/80 dark:hover:text-emerald"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <LinkButton href="#contact" variant="accent" className="px-5 py-3 text-sm">
+            Get a Free Consultation
+          </LinkButton>
+        </Container>
+      </div>
 
       <AnimatePresence>
         {open && (

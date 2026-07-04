@@ -17,7 +17,7 @@ const floaters = [
   { icon: Wind, className: 'right-[10%] top-[14%]', animation: 'animate-float-delayed', size: 40 },
   { icon: Flame, className: 'left-[12%] bottom-[20%]', animation: 'animate-float-slow', size: 38 },
   { icon: Leaf, className: 'right-[16%] bottom-[16%]', animation: 'animate-float', size: 42 },
-  { icon: Zap, className: 'left-[45%] top-[8%]', animation: 'animate-float-delayed', size: 34 },
+  { icon: Zap, className: 'left-[45%] top-[22%]', animation: 'animate-float-delayed', size: 34 },
   { icon: Globe2, className: 'right-[42%] bottom-[10%]', animation: 'animate-float-slow', size: 44 },
 ]
 
@@ -41,7 +41,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-charcoal pt-24"
+      className="relative flex min-h-screen items-center overflow-hidden bg-charcoal pt-20 lg:pt-36"
     >
       <div className="absolute inset-0">
         <AnimatePresence mode="sync">
@@ -116,9 +116,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
         >
-          EnergyMaxx Solutions Limited delivers biodigesters and biogas-powered generators, sustainable
-          agribusiness — snail farming, mushroom cultivation, and honey production — and solar energy systems,
-          engineered for performance and lasting impact.
+          EnergyMaxx Solutions Limited delivers biodigesters and biogas powered plants, sustainable
+          agribusiness (snail farming, mushroom cultivation, and natural honey production), and solar energy
+          systems, engineered for performance and lasting impact.
         </motion.p>
 
         <motion.div

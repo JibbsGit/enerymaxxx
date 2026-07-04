@@ -11,7 +11,7 @@ export function Services() {
         <SectionHeading
           eyebrow="What We Offer"
           title="Our Services"
-          description="From biogas power to sustainable agribusiness — six divisions, one mission, engineered for homes, businesses, and communities."
+          description="From biogas power to sustainable agribusiness: six divisions, one mission, engineered for homes, businesses, and communities."
         />
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

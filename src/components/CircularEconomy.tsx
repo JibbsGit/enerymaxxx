@@ -11,7 +11,7 @@ export function CircularEconomy() {
         <SectionHeading
           eyebrow="The Bigger Picture"
           title="Our Circular Economy"
-          description="Every division feeds the next — waste becomes energy, energy grows food, and food strengthens communities."
+          description="Every division feeds the next: waste becomes energy, energy grows food, and food strengthens communities."
         />
 
         <div className="mt-16 flex flex-wrap items-start justify-center gap-x-1 gap-y-10">

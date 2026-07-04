@@ -35,7 +35,7 @@ export function Contact() {
         <SectionHeading
           eyebrow="Get In Touch"
           title="Let's Build Your Clean Energy Solution"
-          description="Reach out for a free consultation — our team responds quickly and is ready to help."
+          description="Reach out for a free consultation. Our team responds quickly and is ready to help."
         />
 
         <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

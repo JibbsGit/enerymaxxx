@@ -12,6 +12,6 @@ export const circularStages: CircularStage[] = [
   { title: 'Healthy Crops', image: '/images/placeholders/greenhouse-farm.jpg' },
   { title: 'Mushrooms', image: '/images/placeholders/mushroom-cultivation.jpg' },
   { title: 'Snail Farming', image: '/images/placeholders/snail-farm.jpg' },
-  { title: 'Honey Production', image: '/images/placeholders/beekeeper-honey.jpg' },
+  { title: 'Natural Honey Production', image: '/images/placeholders/beekeeper-honey.jpg' },
   { title: 'Sustainable Communities', image: '/images/placeholders/aerial-solar-farmland.jpg' },
 ]

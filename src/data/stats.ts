@@ -14,5 +14,5 @@ export const stats: Stat[] = [
   { label: 'Professional Engineers', value: 40, suffix: '+', icon: HardHat },
   { label: 'Sustainable Technologies', value: 15, suffix: '+', icon: Cpu },
   { label: 'Customer Support', value: 24, suffix: '/7', icon: Headset },
-  { label: 'Average Cost Savings', value: 60, suffix: '%', icon: PiggyBank },
+  { label: 'Average Cost Saving', value: 60, suffix: '%', icon: PiggyBank },
 ]

@@ -43,7 +43,7 @@ function NewsletterForm() {
   }
 
   if (status === 'sent') {
-    return <p className="text-sm font-medium text-emerald">Thanks for subscribing — we'll be in touch!</p>
+    return <p className="text-sm font-medium text-emerald">Thanks for subscribing. We'll be in touch!</p>
   }
 
   return (
@@ -59,7 +59,7 @@ function NewsletterForm() {
       <Button type="submit" variant="accent" disabled={status === 'sending'} className="shrink-0">
         {status === 'sending' ? 'Subscribing...' : 'Subscribe'} <Send size={16} />
       </Button>
-      {status === 'error' && <p className="text-xs text-red-400">Something went wrong — please try again.</p>}
+      {status === 'error' && <p className="text-xs text-red-400">Something went wrong. Please try again.</p>}
     </form>
   )
 }
@@ -80,7 +80,7 @@ export function Footer() {
           <div>
             <h4 className="font-heading text-lg font-bold text-white">Stay Updated</h4>
             <p className="mt-1 text-sm text-white/60">
-              Get news on our latest energy and agribusiness projects — no spam, ever.
+              Get news on our latest energy and agribusiness projects. No spam, ever.
             </p>
           </div>
           <NewsletterForm />
@@ -89,7 +89,13 @@ export function Footer() {
         <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <a href="#home" className="flex items-center">
-              <img src="/logo.png" alt="EnergyMaxx Solutions Limited" className="h-20 w-auto" width={900} height={254} />
+              <img
+                src="/logo.png"
+                alt="EnergyMaxx Solutions Limited"
+                className="h-20 w-auto"
+                width={1218}
+                height={360}
+              />
             </a>
             <p className="mt-4 text-sm leading-relaxed">
               Powering a cleaner tomorrow through biodigesters, biogas power, sustainable agribusiness, and
