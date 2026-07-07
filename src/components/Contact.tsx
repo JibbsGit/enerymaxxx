@@ -34,7 +34,7 @@ export function Contact() {
       <Container>
         <SectionHeading
           eyebrow="Get In Touch"
-          title="Let's be a solution to your clean energy and mordern agro tech"
+          title="Let's Be A Solution To Your Clean Energy And Mordern Agro Tech"
           description="Reach out for a free consultation. Our team responds quickly and ready to help."
         />
 
