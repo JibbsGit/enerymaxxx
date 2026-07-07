@@ -106,7 +106,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mx-auto mt-6 max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
         >
-          Transforming Africa Through <span className="text-emerald">Biogas Power</span> &amp;{' '}
+          Transforming Africa Through <span className="text-emerald">Clean Energy</span> &amp;{' '}
           <span className="text-orange">Sustainable Agriculture</span>
         </motion.h1>
 
