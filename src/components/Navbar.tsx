@@ -23,6 +23,16 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
     }
   }, [open])
 
+  const iconButtonClass = `flex h-10 w-10 items-center justify-center rounded-full border transition-colors ${
+    scrolled || open
+      ? 'border-charcoal/10 text-charcoal hover:border-emerald hover:text-emerald dark:border-white/15 dark:text-white'
+      : 'border-white/30 text-white hover:border-emerald hover:text-emerald'
+  }`
+
+  const navLinkClass = `text-sm font-medium transition-colors hover:text-emerald ${
+    scrolled ? 'text-charcoal/80 dark:text-white/80' : 'text-white/90'
+  }`
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -40,19 +50,11 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
           />
         </a>
 
-        <div className="flex items-center gap-3">
-          <button
-            onClick={toggleDark}
-            aria-label="Toggle dark mode"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/10 text-charcoal transition-colors hover:border-emerald hover:text-emerald dark:border-white/15 dark:text-white"
-          >
+        <div className="flex items-center gap-3 lg:hidden">
+          <button onClick={toggleDark} aria-label="Toggle dark mode" className={iconButtonClass}>
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <button
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal/10 text-charcoal lg:hidden dark:border-white/15 dark:text-white"
-          >
+          <button onClick={() => setOpen((v) => !v)} aria-label="Toggle menu" className={iconButtonClass}>
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
@@ -62,19 +64,20 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
         <Container className="flex h-16 items-center justify-between">
           <nav className="flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-charcoal/80 transition-colors hover:text-emerald dark:text-white/80 dark:hover:text-emerald"
-              >
+              <a key={link.href} href={link.href} className={navLinkClass}>
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <LinkButton href="#contact" variant="accent" className="px-5 py-3 text-sm">
-            Get a Free Consultation
-          </LinkButton>
+          <div className="flex items-center gap-3">
+            <button onClick={toggleDark} aria-label="Toggle dark mode" className={iconButtonClass}>
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+            <LinkButton href="#contact" variant="accent" className="px-5 py-3 text-sm">
+              Get a Free Consultation
+            </LinkButton>
+          </div>
         </Container>
       </div>
 
