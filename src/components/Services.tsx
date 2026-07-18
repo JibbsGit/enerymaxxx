@@ -1,8 +1,48 @@
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
-import { services } from '../data/services'
+import { services, type ServiceItem } from '../data/services'
+
+function ServiceImage({ service }: { service: ServiceItem }) {
+  const slides = service.images ?? [service.image]
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (slides.length < 2) return
+    const timer = setInterval(() => {
+      setIndex((i) => (i + 1) % slides.length)
+    }, 3500)
+    return () => clearInterval(timer)
+  }, [slides.length])
+
+  if (slides.length < 2) {
+    return (
+      <img
+        src={service.image}
+        alt={service.title}
+        loading="lazy"
+        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+      />
+    )
+  }
+
+  return (
+    <AnimatePresence mode="sync">
+      <motion.img
+        key={index}
+        src={slides[index]}
+        alt={service.title}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+      />
+    </AnimatePresence>
+  )
+}
 
 export function Services() {
   return (
@@ -25,12 +65,7 @@ export function Services() {
               transition={{ duration: 0.6, delay: i * 0.08 }}
               className="group relative aspect-4/5 overflow-hidden rounded-3xl shadow-md shadow-charcoal/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald/20"
             >
-              <img
-                src={service.image}
-                alt={service.title}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-              />
+              <ServiceImage service={service} />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/30 to-transparent" />
 
               <div className="absolute inset-x-0 bottom-0 p-5">

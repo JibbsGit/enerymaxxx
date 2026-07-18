@@ -34,8 +34,8 @@ export function Contact() {
       <Container>
         <SectionHeading
           eyebrow="Get In Touch"
-          title="Let's Be A Solution To Your Clean Energy And Mordern Agro Tech"
-          description="Reach out for a free consultation. Our team responds quickly and ready to help."
+          title="Let's Be Your Partner In Clean Energy And Modern Agro-Tech"
+          description="Reach out for a free consultation. Our team responds quickly and ready to help you go green, modernize your agribusiness, and build lasting in-house expertise through hands-on training."
         />
 
         <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

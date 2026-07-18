@@ -4,6 +4,7 @@ export interface ServiceItem {
   division: string
   description: string
   image: string
+  images?: string[]
 }
 
 export const serviceDivisions = [
@@ -13,6 +14,7 @@ export const serviceDivisions = [
   'Natural Honey Production',
   'Agribusiness',
   'Renewable Energy',
+  'Training & Capacity Building',
 ]
 
 export const services: ServiceItem[] = [
@@ -71,5 +73,16 @@ export const services: ServiceItem[] = [
     division: 'Renewable Energy',
     description: 'Hybrid battery systems that keep power flowing around the clock, even off the grid.',
     image: '/images/projects/hybrid-solar-storage.jpg',
+  },
+  {
+    id: 'training',
+    title: 'Training & Capacity Building',
+    division: 'Training & Capacity Building',
+    description: 'Hands-on training in clean energy and modern agricultural technology, building lasting in-house expertise.',
+    image: '/images/training/biodigester-training-session.jpg',
+    images: [
+      '/images/training/biodigester-training-session.jpg',
+      '/images/training/snail-farming-training.jpg',
+    ],
   },
 ]
