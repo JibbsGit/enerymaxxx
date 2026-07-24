@@ -91,7 +91,7 @@ export function Footer() {
             <a href="#home" className="flex items-center">
               <img
                 src="/logo.png"
-                alt="EnergyMaxx Solutions Limited"
+                alt="EnergyMaxx Solutions Ltd"
                 className="h-32 w-auto"
                 width={1218}
                 height={360}

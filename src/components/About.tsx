@@ -51,7 +51,7 @@ export function About() {
               A Trusted Partner in Biogas Power &amp; Sustainable Agriculture
             </h2>
             <p className="mt-4 text-base leading-relaxed text-charcoal/60 dark:text-white/60">
-              EnergyMaxx Solutions Limited is a biogas energy and agribusiness company dedicated to environmentally
+              EnergyMaxx Solutions Ltd is a biogas energy and agribusiness company dedicated to environmentally
               friendly solutions, from biodigesters and biogas powered plants to snail farming, mushroom
               cultivation, and natural honey production, with solar energy systems rounding out our portfolio. We
               also offer hands-on training in clean energy and modern agricultural technology, equipping

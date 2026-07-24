@@ -1,5 +1,5 @@
 export const site = {
-  name: 'EnergyMaxx Solutions Limited',
+  name: 'EnergyMaxx Solutions Ltd',
   shortName: 'EnergyMaxx',
   phones: ['+2347033206286', '+2347069038899'],
   email: 'energymaxxsolutionslmt@gmail.com',

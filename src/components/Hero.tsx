@@ -116,7 +116,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
         >
-          EnergyMaxx Solutions Limited delivers biodigesters and biogas powered plants, sustainable
+          EnergyMaxx Solutions Ltd delivers biodigesters and biogas powered plants, sustainable
           agribusiness (snail farming, mushroom cultivation, and natural honey production), and solar energy
           systems, engineered for performance and lasting impact.
         </motion.p>

@@ -43,7 +43,7 @@ export function Navbar({ isDark, toggleDark }: { isDark: boolean; toggleDark: ()
         <a href="#home" className="flex items-center">
           <img
             src="/logo.png"
-            alt="EnergyMaxx Solutions Limited"
+            alt="EnergyMaxx Solutions Ltd"
             className="h-24 w-auto sm:h-28"
             width={1218}
             height={360}
