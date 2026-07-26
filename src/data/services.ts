@@ -37,7 +37,12 @@ export const services: ServiceItem[] = [
     title: 'Snail Farming',
     division: 'Snail Farming',
     description: 'Commercial heliciculture with modern breeding and growing enclosures for sustainable protein production.',
-    image: '/images/placeholders/snail-farm.jpg',
+    image: '/images/snail/snail-farm-trays-1.jpg',
+    images: [
+      '/images/snail/snail-farm-trays-1.jpg',
+      '/images/snail/snail-farm-harvest.jpg',
+      '/images/snail/snail-closeup.jpg',
+    ],
   },
   {
     id: 'mushroom-cultivation',
